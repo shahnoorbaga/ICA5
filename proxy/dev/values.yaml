@@ -1,0 +1,16 @@
+proxy:
+  name: wpproxy
+  labels:
+    app: proxy
+    env: dev
+    stack: wordpress
+  image:
+    repository: shahnoor786/nginx-proxy
+    tag: latest
+    pullPolicy: Always
+  replicas: 10
+  configmap:
+  ## KEY: "value"
+  APP_ENV: "dev"
+  containerPorts:
+      http: 80

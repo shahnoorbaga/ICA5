@@ -1,0 +1,23 @@
+wp:
+  name: wp-proxy
+  labels:
+    app: wp-proxy
+    env: dev
+    stack: wordpress
+  image:
+    repository: shahnoor786/nginx-proxy
+    tag: latest
+    pullPolicy: Always
+  replicas: 5
+  rollingUpdate:
+    maxSurge: 1
+    maxUnavailable: 1
+  resources:
+    requests:
+      cpu: "150m"
+      memory: "128Mi"
+    limits:
+      cpu: "250m"
+      memory: "256Mi"
+  containerPorts:
+      http: 80

@@ -1,0 +1,32 @@
+---
+# Source: wordpress-stack/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wpproxy
+  labels:
+    app: proxy
+    env: dev
+    stack: wordpress
+spec:
+  selector:
+    matchLabels:
+      app: proxy
+      env: dev
+      stack: wordpress
+  replicas: 10
+  template:
+    metadata:
+      labels:
+        app: proxy
+        env: dev
+        stack: wordpress
+    spec:
+      containers:
+      - name: wpproxy
+        image: shahnoor786/nginx-proxy:latest
+        ports:
+            - containerPort: 80
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
