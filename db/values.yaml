@@ -3,7 +3,7 @@ db:
   labels:
     app: db
     env: dev
-    stack: wordpress
+    id: c0905650
   image:
     repository: msalim22/wpdb
     tag: v1

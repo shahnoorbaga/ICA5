@@ -3,7 +3,7 @@ wp:
   labels:
     app: wp-proxy
     env: dev
-    stack: wordpress
+    id: c0905650
   image:
     repository: shahnoor786/nginx-proxy
     tag: latest

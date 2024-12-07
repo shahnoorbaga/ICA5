@@ -3,7 +3,7 @@ wp:
   labels:
     app: wp-app
     env: dev
-    stack: wordpress
+    id: c0905650
   image:
     repository: msalim22/wp
     tag: v2
